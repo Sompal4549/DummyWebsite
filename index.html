@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+  <title>
+    Dummy Website
+  </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", sans-serif;
+    }
+
+    body,
+    html {
+      height: 100%;
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      width: 100%;
+      background-color: gray;
+    }
+
+    .w3-bar .w3-button {
+      padding: 16px;
+    }
+    .has-before::before{
+      content: "";
+      position: absolute;
+      top:-50px;
+      left: -50px;
+      width: 100%;
+      height: 100%;
+      bottom: 50px;
+      /* min-height: 400px; */
+      background-color: rgb(164, 163, 163);
+    }
+    .has-before{
+      position: relative;
+      background-color: gray;
+      width: 100%;
+      border: 20px solid white;
+      height: 100%;
+      min-height: 350px;
+      margin-top: 50px;
+      border: 50px solid white;
+
+    }
+    .before-shadow::before{
+      content: "";
+      width: 250px;
+      height: 200px;
+      border-radius: 15px;
+      position: absolute;
+      background-color: white;
+      top: 50%;
+      left: -30px;
+      bottom: -30px;
+      box-shadow: 4px 4px 10px 4px rgba(0,0,0,0.5);
+    }
+    .dot-container {
+  text-align: center;
+
+
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dot:hover{
+  background-color: rgb(106, 104, 104);
+  /* box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.2); */
+}
+    @media only screen and (max-width:600px) {
+      .has-before{
+        height: 300px;
+        border-width: 20px;
+        margin-top: 10px;
+      }
+      .before-shadow::before{
+        height: 170px;
+        width: 220px;
+      }
+    }
+  </style>
+  <body>
+    <div
+      class="offcanvas offcanvas-start"
+      data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">LOGO</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <nav
+          class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                
+                <a href="#about"  class="py-2 text-dark text-decoration-none"
+                >ABOUT</a
+                >
+                <a href="#team"  class="py-2 text-dark text-decoration-none"
+                >TEAM</a
+                >
+                <a href="#work"  class="py-2 text-dark text-decoration-none"
+                >WORK</a
+                >
+                <a href="#pricing"  class="py-2 text-dark text-decoration-none"
+                >PRICING</a
+                >
+                <a href="#contact"  class="py-2 text-dark text-decoration-none"
+                >CONTACT</a
+                >
+            </nav>
+        </ul>
+        <div
+        class="w3-display-bottomleft text-dark fs-3"
+        style="padding: 24px 48px"
+      >
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </div>
+    </div>
+      </div>
+    </div>
+    <div class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid" id="myNavbar">
+        <a href="#home" class="navbar-brand">LOGO</a>
+        <!-- Right-sided navbar links -->
+        <div>
+          <ul
+            class="navbar-nav me-auto mb-lg-0 d-flex d-none d-sm-block flex-row justify-content-between w-100"
+          >
+            <a
+              href="#about"
+              class="nav-item text-dark text-decoration-none mx-2"
+              >ABOUT</a
+            >
+            <a href="#team" class="nav-item text-dark text-decoration-none mx-2"
+              ><i class="fa fa-user"></i> TEAM</a
+            >
+            <a href="#work" class="nav-item text-dark text-decoration-none mx-2"
+              ><i class="fa fa-th"></i> WORK</a
+            >
+            <a
+              href="#pricing"
+              class="nav-item text-dark text-decoration-none mx-2"
+              ><i class="fa fa-usd"></i> PRICING</a
+            >
+            <a
+              href="#contact"
+              class="nav-item text-dark text-decoration-none mx-2"
+              ><i class="fa fa-envelope"></i> CONTACT</a
+            >
+          </ul>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+        <a
+          class="d-block d-sm-none"
+           type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"
+        >
+          <i class="fa fa-bars text-dark fs-5"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sidebar on small screens when clicking the menu icon -->
+
+    <!-- Header with full-height image -->
+    <header class="bgimg-1 bg-secondary h-100 position-relative d-flex justify-content-center align-items-center" id="home">
+      <div class="text-white position-absolute w-100% h-auto d-flex flex-column align-items-center justify-content-center"  style="padding: 48px;  max-width: 700px; ">
+        <span class="text-uppercase text-dark  pt-5 ">
+          Let's get started
+        </span>
+        <span class="text-center text-capitalize fs-1 fw-bolder d-block">Smart Partner For To Grow Your Best Business</span
+        ><br />
+        <span class="fs-6 d-block text-center"
+          >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores velit doloribus sed aperiam laborum expedita consectetur eligendi deserunt modi dicta, perspiciatis quod ratione, ipsum dolorum aut tempore omnis libero sit!</span
+        ><br />
+        <p>
+          <a
+            href="#about"
+            class="bg-white p-2 fw-light btn mt-4"
+            >Get a Quote</a
+          >
+        </p>
+      </div>
+     
+    </header>
+    <div class="container-fluid w-100 px-3 px-md-5" id="about">
+<section class="bg-white">
+  <div class="p-0 m-0 g-0 container-fluid">
+    <div class="row d-flex g-0 p-0 m-0 mt-3 flex-row flex-wrap">
+      <div class="col-md-3 bg-dark py-5 px-5">
+        <h3 class="text-white text-capitalize pb-3">
+          IT Business Consultant
+        </h3>
+        <button class="border-0 bg-secondary p-2 px-4 rounded-1 text-white">Learn More</button>
+      </div>
+      <div class="col-md-3 bg-secondary py-5 px-5">
+        <h3 class="text-white text-capitalize pb-3">
+          IT Business Consultant
+        </h3>
+        <button class="border-0 bg-dark p-2 px-4 rounded-1 text-white">Learn More</button>
+      </div>
+      <div class="col-md-3 bg-dark py-5 px-5">
+        <h3 class="text-white text-capitalize pb-3">
+          IT Business Consultant
+        </h3>
+        <button class="border-0 bg-secondary p-2 px-4 rounded-1 text-white">Learn More</button>
+      </div>
+      <div class="col-md-3 bg-secondary py-5 px-5">
+        <h3 class="text-white text-capitalize pb-3">
+          IT Business Consultant
+        </h3>
+        <button class="border-0 bg-dark p-2 px-4 rounded-1 text-white">Learn More</button>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- About Section -->
+   <div class="row d-flex flex-wrap pt-5">
+      <div class="col-md-6">
+        
+        <span class="d-block text-uppercase fs-6">
+          Grow Your Business
+        </span>
+        <div class="h3 fs-2 fw-bolder text-capitalize">
+          We Are Best solution for your Business
+        </div>
+      </div>
+      <div class="col-md-6">
+        <p class="fs-6 text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tempore ut itaque esse reiciendis aliquam vitae nisi voluptatum iste impedit exercitationem, nam consequuntur officia est laboriosam atque dolores eum animi?</p>
+      </div>
+   </div>
+    <div class="container-fluid d-flex flex-wrap flex-row p-0 row g-0 m-0">
+      <div class="col-md-4 p-3 p-md-5 text-white bg-secondary rounded-5" style="border: 10px solid white;">
+        <div class="icon">
+          
+        <i class="bg-white p-3 py-3 text-dark rounded-2 fs-3 fa fa-handshake"></i>
+      
+        </div>
+        <h5 class="h6 pt-3 fw-bold">Smart</h5>
+        <p class="fs-6 text-white lh-base">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid omnis libero sequi voluptatem facilis alias molestias hic, non reiciendis nisi.</p>
+      </div>
+      <div class="col-md-4 p-3 p-md-5 text-white bg-secondary rounded-5" style="border: 10px solid white;">
+        <div class="icon">
+          
+        <i class="bg-white p-3 py-3 text-dark rounded-2 fs-3 fa fa-handshake"></i>
+      
+        </div>
+        <h5 class="h6 pt-3 fw-bold">Smart</h5>
+        <p class="fs-6 text-white lh-base">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid omnis libero sequi voluptatem facilis alias molestias hic, non reiciendis nisi.</p>
+      </div>   
+      <div class="col-md-4 p-3 p-md-5 text-white bg-secondary rounded-5" style="border: 10px solid white;">
+        <div class="icon">
+          
+        <i class="bg-white p-3 py-3 text-dark rounded-2 fs-3 fa fa-handshake"></i>
+      
+        </div>
+        <h5 class="h6 pt-3 fw-bold">Smart</h5>
+        <p class="fs-6 text-white lh-base">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid omnis libero sequi voluptatem facilis alias molestias hic, non reiciendis nisi.</p>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap py-5 flex-row container p-0 m-auto g-0 row">
+      <div class="col-md-6">
+        <div class="position-relative bg-secondary has-before"></div>
+      </div>
+      <div class="col-md-6">
+        <p class="text-secondary">
+          All In One Package
+        </p>
+        <h1 class="h1 text-dark fs-1 fw-bolder ">Get More Customers Now & Lets 24 Hours Online</h1>
+        <p class="fs-6 l1 fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quisquam quam obcaecati reprehenderit, laudantium repellendus.</p>
+        <div class="mb-2 fw-bold text-secondary"><i class="fs-5  fa fa-check"></i>&nbsp; Website Ready</div>
+        <div class="mb-2 fw-bold text-secondary"><i class="fs-5  fa fa-check"></i>&nbsp; All In Audience</div>
+        <div class="mb-2 fw-bold text-secondary"><i class="fs-5  fa fa-check"></i>&nbsp; Digital Marketing</div>
+        <button class="py-3 px-5 bg-primary text-white border-0 rounded-2">Detail Project</button>
+      </div>
+     
+    </div>
+    
+    <!-- Work Section -->
+  </div>
+  <div class="container-fluid px-3 px-md-5" style="padding: 128px 16px 50px; background-color: rgba(0, 0, 0, 0.1);" id="work">
+    <p class="text-secondary text-uppercase mb-2 text-center">Why Choose us</p>
+    <h3 class="text-dark text-center h3 fs-3 text-capitalize fw-bolder">Our Business Value</h3>
+    <p class="fs-6 text-secondary text-center lh-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo dolores autem in neque quam amet!</p>
+
+    <div class="row d-flex flex-wrap flex-row" style="margin-top: 64px">
+      <div class="col-md-4 p-3 ps-md-4">
+        <div class="card shadow-lg text-center p-5 border-0">
+          <i class="fa-brands fa-algolia fs-1 mb-4"></i>
+          <h3 class="fw-bold fs-3 h3 text-dark">Fast & Perfect Work</h3>
+          <p class="lh-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet est qui consequuntur adipisci modi pariatur sapiente exercitationem magnam quas.</p>
+        </div>
+      </div>
+      <div class="col-md-4 p-3 ps-md-4">
+        <div class="card shadow-lg text-center p-5 border-0">
+          <i class="mb-4 fa-brands fa-algolia fs-1"></i>
+          <h3 class="fw-bold fs-3 h3 text-dark">Fast & Perfect Work</h3>
+          <p class="lh-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet est qui consequuntur adipisci modi pariatur sapiente exercitationem magnam quas.</p>
+        </div>
+      </div>
+      <div class="col-md-4 p-3 ps-md-4">
+        <div class="card shadow-lg text-center p-5 border-0">
+          <i class="mb-4 fa-brands fa-algolia fs-1"></i>
+          <h3 class="fw-bold fs-3 h3 text-dark">Fast & Perfect Work</h3>
+          <p class="lh-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet est qui consequuntur adipisci modi pariatur sapiente exercitationem magnam quas.</p>
+        </div>
+      </div>
+      <div class="col-md-4 p-3 ps-md-4">
+        <div class="card shadow-lg text-center p-5 border-0">
+          <i class="mb-4 fa-brands fa-algolia fs-1"></i>
+          <h3 class="fw-bold fs-3 h3 text-dark">Fast & Perfect Work</h3>
+          <p class="lh-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet est qui consequuntur adipisci modi pariatur sapiente exercitationem magnam quas.</p>
+        </div>
+      </div>
+      <div class="col-md-4 p-3 ps-md-4">
+        <div class="card shadow-lg text-center p-5 border-0">
+          <i class="mb-4 fa-brands fa-algolia fs-1"></i>
+          <h3 class="fw-bold fs-3 h3 text-dark">Fast & Perfect Work</h3>
+          <p class="lh-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet est qui consequuntur adipisci modi pariatur sapiente exercitationem magnam quas.</p>
+        </div>
+      </div>
+      <div class="col-md-4 p-3 ps-md-4">
+        <div class="card shadow-lg text-center p-5 border-0">
+          <i class="mb-4 fa-brands fa-algolia fs-1"></i>
+          <h3 class="fw-bold fs-3 h3 text-dark">Fast & Perfect Work</h3>
+          <p class="lh-base text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet est qui consequuntur adipisci modi pariatur sapiente exercitationem magnam quas.</p>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+ 
+<div class="px-3 px-md-5 py-md-5 py-3">
+<div class="d-flex flex-wrap flex-row container-fluid row p-0 m-0 py-3 py-md-5 ">
+<div class="col-md-6">
+  <div>
+    <p class="text-uppercase text-secondary">Seo service specialist</p>
+    <h3 class="h3 fw-bolder fs-1 text-capitalize">Get Organic Traffic from search engine optimization</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi consequuntur doloribus, optio ipsa distinctio nostrum.</p>
+    <div class="mb-2 fw-bold text-secondary"><i class="fs-5  fa fa-check"></i>&nbsp; Google Search</div>
+        <div class="mb-2 fw-bold text-secondary"><i class="fs-5  fa fa-check"></i>&nbsp; Bing Search</div>
+        <div class="mb-2 fw-bold text-secondary"><i class="fs-5  fa fa-check"></i>&nbsp; And Many More</div>
+        <button class="btn bg-secondary text-white fw-bold fs-6 p-3 px-5">Detail Project</button>
+  </div>
+</div>
+<div class="col-md-6 p-3 p-md-5">
+  <div class="before-shadow position-relative bg-secondary shadow-lg rounded-2" style="width: 100%; max-width: 500px; min-height: 400px; height: 100%;"></div>
+</div>
+</div>
+</div>
+   <div id="team" class="container-fluid p-0 m-0 g-0 px-3 px-md-5" >
+    <div class="m-auto" style="max-width: 500px;">
+      <p class="text-secondary text-uppercase mb-2 text-center">Our team success</p>
+      <h3 class="h3 text-dark text-center mb-2 fw-bolder">Our Best Team</h3>
+      <p class="text-center mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nam nobis cum, consequuntur hic porro!</p>
+    </div>
+    <div class="row d-flex flex-row flex-wrap p-0 m-0 g-0 align-items-center justify-content-center" style="margin-bottom: 100px;"> 
+      <div class="col-md-4 team-card  d-flex justify-content-start align-items-start p-0 m-0 g-0" style="height: 600px;">
+        <div class="bg-secondary position-relative p-0 m-0 g-0 rounded-2" style="width: 90%; height: 400px;">
+          
+          <div class="rounded-2 bg-dark position-absolute p-0 m-0 g-0" style="width:80%; left: 10%; height: 250px; top:300px; bottom: -50px;">
+            <div class="p-4">
+
+              <h4 class="text-center text-secondary fw-bold text-capitalize h5">Founder</h4>
+              <h3 class="text-center text-white text-capitalize fw-bolder h3">Mr. John Doe</h3>
+              <p class="text-center d-flex align-items-center justify-content-center">
+                <span class="bg-secondary d-inline-flex align-items-center justify-content-center m-2 text-center" style="border-radius:50%; width: 35px; height: 35px;">
+                  <i class="text-white fs-4 fa-brands fa-facebook-f"></i>
+                </span>
+                <span class="bg-secondary d-inline-flex align-items-center justify-content-center m-2 text-center" style="border-radius:50%; width: 35px; height: 35px;">
+                  <i class="text-white fs-4 fa-brands fa-facebook-f"></i>
+                </span>
+                <span class="bg-secondary d-inline-flex align-items-center justify-content-center m-2 text-center" style="border-radius:50%; width: 35px; height: 35px;">
+                  <i class="text-white fs-4 fa-brands fa-facebook-f"></i>
+                </span>
+              </p>
+              <div class="position-absolute bottom-0 bg-secondary text-white" style="right: 0; width: 100px; height: 80px; border-radius: 0 0 7px 0;">
+              <span class="text-white fs-2 fw-bold text-center d-inline-flex align-items-center justify-content-center" style="width: 100%; height: 100%;"><i class="text-center fa-solid fa-paper-plane"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      <div class="col-md-4 team-card  d-flex justify-content-start align-items-start p-0 m-0 g-0" style="height: 600px;">
+        <div class="bg-secondary position-relative p-0 m-0 g-0 rounded-2" style="width: 90%; height: 400px;">
+          
+          <div class="rounded-2 bg-dark position-absolute p-0 m-0 g-0" style="width:80%; left: 10%; height: 250px; top:300px; bottom: -50px;">
+            <div class="p-4">
+
+              <h4 class="text-center text-secondary fw-bold text-capitalize h5">Founder</h4>
+              <h3 class="text-center text-white text-capitalize fw-bolder h3">Mr. John Doe</h3>
+              <p class="text-center d-flex align-items-center justify-content-center">
+                <span class="bg-secondary d-inline-flex align-items-center justify-content-center m-2 text-center" style="border-radius:50%; width: 35px; height: 35px;">
+                  <i class="text-white fs-4 fa-brands fa-facebook-f"></i>
+                </span>
+                <span class="bg-secondary d-inline-flex align-items-center justify-content-center m-2 text-center" style="border-radius:50%; width: 35px; height: 35px;">
+                  <i class="text-white fs-4 fa-brands fa-facebook-f"></i>
+                </span>
+                <span class="bg-secondary d-inline-flex align-items-center justify-content-center m-2 text-center" style="border-radius:50%; width: 35px; height: 35px;">
+                  <i class="text-white fs-4 fa-brands fa-facebook-f"></i>
+                </span>
+              </p>
+              <div class="position-absolute bottom-0 bg-secondary text-white" style="right: 0; width: 100px; height: 80px; border-radius: 0 0 7px 0;">
+              <span class="text-white fs-2 fw-bold text-center d-inline-flex align-items-center justify-content-center" style="width: 100%; height: 100%;"><i class="text-center fa-solid fa-paper-plane"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-4 team-card  d-flex justify-content-start align-items-start p-0 m-0 g-0" style="height: 600px;">
+          <div class="bg-secondary position-relative p-0 m-0 g-0 rounded-2" style="width: 90%; height: 400px;">
+            
+            <div class="rounded-2 bg-dark position-absolute p-0 m-0 g-0" style="width:80%; left: 10%; height: 250px; top:300px; bottom: -50px;">
+              <div class="p-4">
+  
+                <h4 class="text-center text-secondary fw-bold text-capitalize h5">Founder</h4>
+                <h3 class="text-center text-white text-capitalize fw-bolder h3">Mr. John Doe</h3>
+                <p class="text-center d-flex align-items-center justify-content-center">
+                  <span class="bg-secondary d-inline-flex align-items-center justify-content-center m-2 text-center" style="border-radius:50%; width: 35px; height: 35px;">
+                    <i class="text-white fs-4 fa-brands fa-facebook-f"></i>
+                  </span>
+                  <span class="bg-secondary d-inline-flex align-items-center justify-content-center m-2 text-center" style="border-radius:50%; width: 35px; height: 35px;">
+                    <i class="text-white fs-4 fa-brands fa-facebook-f"></i>
+                  </span>
+                  <span class="bg-secondary d-inline-flex align-items-center justify-content-center m-2 text-center" style="border-radius:50%; width: 35px; height: 35px;">
+                    <i class="text-white fs-4 fa-brands fa-facebook-f"></i>
+                  </span>
+                </p>
+                <div class="position-absolute bottom-0 bg-secondary text-white" style="right: 0; width: 100px; height: 80px; border-radius: 0 0 7px 0;">
+                <span class="text-white fs-2 fw-bold text-center d-inline-flex align-items-center justify-content-center" style="width: 100%; height: 100%;"><i class="text-center fa-solid fa-paper-plane"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+    </div>
+   </div>
+   <div id="testimonial" class="container-fluid p-0 m-0 g-0 px-3 px-md-5 bg-secondary " >
+    <div class="m-auto" style="max-width: 500px;">
+      <p class="text-secondary text-uppercase mb-2 text-center">Our team success</p>
+      <h3 class="h3 text-dark text-center mb-2 fw-bolder">Our Best Team</h3>
+      <p class="text-center mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nam nobis cum, consequuntur hic porro!</p>
+    </div>
+    <div class="slider container-fluid p-0 m-0">
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators dot-container" style="margin-top: 40px !important;" >
+        <button style="height: 28px !important;" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active dot" aria-current="true" aria-label="Slide 1"></button>
+        <button style="height: 28px !important;" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="dot"></button>
+        <button style="height: 28px !important;" type="button" class="dot" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row flex-row flex-wrap ">
+            <div class="col-md-6">
+              <div class="m-3 m-md-5 card p-3 p-md-5">
+                <span class="fs-1 text-secondary">
+  
+                  <i class="fa-solid fa-quote-left fs-1"></i>
+                </span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci laborum, in aut facilis suscipit quaerat, voluptatibus ipsa necessitatibus rem, eveniet sapiente totam quisquam at? Numquam maiores tenetur quia asperiores ipsum.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="bg-secondary rounded-circle" style="width: 100px; height: 100px;"></div>
+                  <div class="mx-2">
+                    <h3 class="h3 text-dark fw-bolder text-capitalize m-0 p-0">John doe</h3>
+                    <p class="text-secondary fs-5 fw-bold">
+                      Director
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="m-3 m-md-5 card p-3 p-md-5">
+                <span class="fs-1 text-secondary">
+  
+                  <i class="fa-solid fa-quote-left fs-1"></i>
+                </span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci laborum, in aut facilis suscipit quaerat, voluptatibus ipsa necessitatibus rem, eveniet sapiente totam quisquam at? Numquam maiores tenetur quia asperiores ipsum.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="bg-secondary rounded-circle" style="width: 100px; height: 100px;"></div>
+                  <div class="mx-2">
+                    <h3 class="h3 text-dark fw-bolder text-capitalize m-0 p-0">John doe</h3>
+                    <p class="text-secondary fs-5 fw-bold">
+                      Director
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row flex-row flex-wrap ">
+            <div class="col-md-6">
+              <div class="m-3 m-md-5 card p-3 p-md-5">
+                <span class="fs-1 text-secondary">
+  
+                  <i class="fa-solid fa-quote-left fs-1"></i>
+                </span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci laborum, in aut facilis suscipit quaerat, voluptatibus ipsa necessitatibus rem, eveniet sapiente totam quisquam at? Numquam maiores tenetur quia asperiores ipsum.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="bg-secondary rounded-circle" style="width: 100px; height: 100px;"></div>
+                  <div class="mx-2">
+                    <h3 class="h3 text-dark fw-bolder text-capitalize m-0 p-0">John doe</h3>
+                    <p class="text-secondary fs-5 fw-bold">
+                      Director
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="m-3 m-md-5 card p-3 p-md-5">
+                <span class="fs-1 text-secondary">
+  
+                  <i class="fa-solid fa-quote-left fs-1"></i>
+                </span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci laborum, in aut facilis suscipit quaerat, voluptatibus ipsa necessitatibus rem, eveniet sapiente totam quisquam at? Numquam maiores tenetur quia asperiores ipsum.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="bg-secondary rounded-circle" style="width: 100px; height: 100px;"></div>
+                  <div class="mx-2">
+                    <h3 class="h3 text-dark fw-bolder text-capitalize m-0 p-0">John doe</h3>
+                    <p class="text-secondary fs-5 fw-bold">
+                      Director
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row flex-row flex-wrap ">
+            <div class="col-md-6">
+              <div class="m-3 m-md-5 card p-3 p-md-5">
+                <span class="fs-1 text-secondary">
+  
+                  <i class="fa-solid fa-quote-left fs-1"></i>
+                </span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci laborum, in aut facilis suscipit quaerat, voluptatibus ipsa necessitatibus rem, eveniet sapiente totam quisquam at? Numquam maiores tenetur quia asperiores ipsum.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="bg-secondary rounded-circle" style="width: 100px; height: 100px;"></div>
+                  <div class="mx-2">
+                    <h3 class="h3 text-dark fw-bolder text-capitalize m-0 p-0">John doe</h3>
+                    <p class="text-secondary fs-5 fw-bold">
+                      Director
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="m-3 m-md-5 card p-3 p-md-5">
+                <span class="fs-1 text-secondary">
+  
+                  <i class="fa-solid fa-quote-left fs-1"></i>
+                </span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci laborum, in aut facilis suscipit quaerat, voluptatibus ipsa necessitatibus rem, eveniet sapiente totam quisquam at? Numquam maiores tenetur quia asperiores ipsum.
+                </p>
+                <div class="d-flex align-items-center">
+                  <div class="bg-secondary rounded-circle" style="width: 100px; height: 100px;"></div>
+                  <div class="mx-2">
+                    <h3 class="h3 text-dark fw-bolder text-capitalize m-0 p-0">John doe</h3>
+                    <p class="text-secondary fs-5 fw-bold">
+                      Director
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+   
+       
+      
+    </div>
+   </div>
+ 
+
+    <!-- Pricing Section -->
+    <div
+      class="w3-container w3-center w3-dark-grey"
+      style="padding: 128px 16px"
+      id="pricing"
+    >
+    <div class="m-auto" >
+      <h3 class="h3 text-dark text-center mb-2 fw-bolder">PRICING</h3>
+      <p class="text-center mb-4">Choose a pricing plan that fits your needs.</p>
+    </div>
+      <div class="row d-flex flex-wrap p-0 align-items-center" style="margin-top: 64px">
+        <div class="col-md-4 p-3 p-md-4">
+          <ul class="shadow-lg list-unstyled text-center bg-white" style="height: 500px;">
+            <li class="bg-dark p-3 p-md-4 text-white fs-2 text-center">Basic</li>
+            <li class="p-3 p-md-3 fs-5"><b>10GB</b> Storage</li>
+            <li class="p-3 p-md-3 fs-5"><b>10</b> Emails</li>
+            <li class="p-3 p-md-3 fs-5"><b>10</b> Domains</li>
+            <li class="p-3 p-md-3 fs-5"><b>Endless</b> Support</li>
+            <li class="p-3 p-md-3 fs-5">
+              <h2 class="w3-wide">$ 10</h2>
+              <span class="w3-opacity">per month</span>
+            </li>
+            <li class="bg-secondary px-3 py-2">
+              <button class="px-3 py-2 border-0 btn">
+                Sign Up
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 p-3 p-md-4" >
+          <ul class="shadow-lg list-unstyled text-center bg-white" style="height: 500px;">
+            <li class="bg-dark p-3 p-md-4 text-white fs-2 text-center">Basic</li>
+            <li class="p-3 p-md-3 fs-5"><b>10GB</b> Storage</li>
+            <li class="p-3 p-md-3 fs-5"><b>10</b> Emails</li>
+            <li class="p-3 p-md-3 fs-5"><b>10</b> Domains</li>
+            <li class="p-3 p-md-3 fs-5"><b>Endless</b> Support</li>
+            <li class="p-3 p-md-3 fs-5">
+              <h2 class="w3-wide">$ 10</h2>
+              <span class="w3-opacity">per month</span>
+            </li>
+            <li class="bg-secondary px-3 py-2">
+              <button class="px-3 py-2 border-0 btn">
+                Sign Up
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 p-3 p-md-4">
+          <ul class="shadow-lg list-unstyled text-center bg-white" style="height: 500px;">
+            <li class="bg-dark p-3 p-md-4 text-white fs-2 text-center">Basic</li>
+            <li class="p-3 p-md-3 fs-5"><b>10GB</b> Storage</li>
+            <li class="p-3 p-md-3 fs-5"><b>10</b> Emails</li>
+            <li class="p-3 p-md-3 fs-5"><b>10</b> Domains</li>
+            <li class="p-3 p-md-3 fs-5"><b>Endless</b> Support</li>
+            <li class="p-3 p-md-3 fs-5">
+              <h2 class="w3-wide">$ 10</h2>
+              <span class="w3-opacity">per month</span>
+            </li>
+            <li class="bg-secondary px-3 py-2">
+              <button class="px-3 py-2 border-0 btn">
+                Sign Up
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+   <section>
+    <div>
+      <div class="row d-flex flex-wrap flex-row align-items-center p-0 m-0 g-0 align-items-end justify-content-end">
+        <div class="col-md-6">
+          <div class="p-3 p-md-4">
+            <div class="bg-secondary" style="width: 100%; height: 100%; min-width: 300px; min-height: 400px;"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 p-md-4">
+            <div class="m-auto">
+              <p class="text-secondary text-uppercase mb-2">frequently asked questions</p>
+              <h3 class="h3 text-dark mb-2 fw-bolder">Usually asked questions from our clients & Partners</h3>
+              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nam nobis cum, consequuntur hic porro!</p>
+            </div>
+            <div class="accordion border-0 rounded-0" id="accordionExample">
+              <div class="accordion-item border-0 ">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button rounded-0 fw-bolder px-0 py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="border-bottom: 2px solid rgba(0,0,0,0.3) !important;">
+                    How To Order
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show px-0" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body px-0">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 rounded-0">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed py-4 rounded-0 fw-bolder px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="border-bottom: 2px solid rgba(0,0,0,0.3) !important;">
+                    Can I Make An
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body px-0">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 rounded-0">
+                <h2 class="accordion-header border-0" id="headingThree">
+                  <button class="accordion-button collapsed py-4 border-0 rounded-0 fw-bolder px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="border-bottom: 2px solid rgba(0,0,0,0.3) !important;">
+                    How Long
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body px-0">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+   </section>
+
+    <!-- Footer -->
+    <footer class="">
+      <!-- <a href="#home" class="w3-button w3-light-grey"> -->
+      <span id="toTop">
+        <i class="fa fa-arrow-up"></i>To the top
+      </span>
+      <!-- </a> -->
+      <div class="">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </div>
+     
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Modal Image Gallery
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+      }
+      $("#toTop").click(function () {
+        //1 second of animation time
+        //html works for FFX but not Chrome
+        //body works for Chrome but not FFX
+        //This strange selector seems to work universally
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+      });
+
+      // Toggle between showing and hiding the sidebar when clicking the menu icon
+      var mySidebar = document.getElementById("mySidebar");
+
+      function w3_open() {
+        if (mySidebar.style.display === "block") {
+          mySidebar.style.display = "none";
+        } else {
+          mySidebar.style.display = "block";
+        }
+      }
+
+      // Close the sidebar with the close button
+      function w3_close() {
+        mySidebar.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
